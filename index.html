@@ -633,8 +633,9 @@ function buildCards() {
     card.style.setProperty('--accent', accent);
 
     // color del botón: rojo para video, azul para presentación
-    const btnBg    = c.type === 'video' ? 'var(--red)' : 'var(--blue)';
-    const btnHover = c.type === 'video' ? 'var(--red-dim)' : 'var(--blue-dim)';
+    const esVideo  = c.type === 'video' || c.type === 'videopresentacion';
+    const btnBg    = esVideo ? 'var(--red)' : 'var(--blue)';
+    const btnHover = esVideo ? 'var(--red-dim)' : 'var(--blue-dim)';
 
     card.innerHTML = `
       <div class="card-icon">${c.icon}</div>
